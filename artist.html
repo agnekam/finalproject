@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ISS</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="row header-row">
+      <div class="col-md-2 offset-md-5" align="center">
+        <h1>Find an Event<img src="https://www.stubhub.co.uk/magazine/sites/default/files/styles/default_teaser/public/2018-02/the-o2-london-info.jpg?h=1574c600&itok=Cv17UsZN"/></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="card text-center">
+      <div class="card-header">
+        Events Coming Up Soon
+      </div>
+      <p class="card-text">Enter the name of the artist</p>
+      <div id="artist-form">
+        <form method="post" action="/">
+          <label for="artist"></label>
+          <input type="text" id="artist" name="artist">
+          <input type="submit" id="submit-button" value="Submit">
+        </form>
+      </div>
+      {% if pass_time != None %}
+        <h4>Pass time for: {{ postcode }}</h4>
+        {{ pass_time }}
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
